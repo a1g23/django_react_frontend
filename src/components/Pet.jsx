@@ -1,5 +1,17 @@
-export default function Pet(props) {
+import { Link } from "react-router-dom"
+
+
+
+export default function Pet({ pet }) {
+
+
+    const id = pet.url.split('/')[4]
+
     return (
-        <h1>Pet Component</h1>
+        <div>
+            <Link to={`/pets/${id}`}>
+                <h1>{pet.name}</h1>
+            </Link>
+        </div>
     )
 }
